@@ -1,0 +1,49 @@
+{
+  "nav": {
+    "recipes": "Công Thức",
+    "mealPlans": "Kế Hoạch Bữa Ăn",
+    "shoppingList": "Danh Sách Mua Sắm",
+    "signIn": "Đăng Nhập"
+  },
+  "hero": {
+    "title": "Không còn phải lo \"Hôm nay ăn gì?\"",
+    "subtitle": "Lập kế hoạch bữa ăn dễ dàng, theo dõi dinh dưỡng, quản lý chi phí và chia sẻ công thức với cộng đồng đầu bếp toàn cầu.",
+    "startPlanning": "Bắt Đầu Lập Kế Hoạch",
+    "browseRecipes": "Khám Phá Công Thức",
+    "stats": {
+      "recipes": "Công Thức",
+      "cuisines": "Ẩm Thực",
+      "users": "Người Dùng"
+    }
+  },
+  "features": {
+    "title": "AngiDay Giúp Lập Kế Hoạch Bữa Ăn Dễ Dàng",
+    "subtitle": "Bộ công cụ toàn diện giúp bạn tiết kiệm thời gian, giảm căng thẳng và tận hưởng bữa ăn ngon mỗi ngày.",
+    "items": {
+      "mealPlanning": {
+        "title": "Kế Hoạch Bữa Ăn Cá Nhân",
+        "description": "Tạo kế hoạch bữa ăn hàng ngày, hàng tuần hoặc hàng tháng phù hợp với sở thích, nhu cầu dinh dưỡng và lịch trình của bạn."
+      },
+      "recipeDiscovery": {
+        "title": "Khám Phá Công Thức",
+        "description": "Duyệt qua hàng nghìn công thức từ nhiều nền ẩm thực, lọc theo nhu cầu dinh dưỡng, nguyên liệu, thời gian chuẩn bị và nhiều tiêu chí khác."
+      },
+      "shoppingList": {
+        "title": "Danh Sách Mua Sắm Tự Động",
+        "description": "Tạo danh sách mua sắm từ kế hoạch bữa ăn, được tổ chức theo danh mục với theo dõi chi phí."
+      },
+      "nutritionTracking": {
+        "title": "Theo Dõi Dinh Dưỡng",
+        "description": "Theo dõi lượng calo, chất dinh dưỡng đa lượng và giá trị dinh dưỡng cho từng bữa ăn và toàn bộ kế hoạch."
+      },
+      "community": {
+        "title": "Chia Sẻ Cộng Đồng",
+        "description": "Chia sẻ công thức và kế hoạch bữa ăn yêu thích với cộng đồng AngiDay và khám phá những món ăn phổ biến."
+      },
+      "recommendations": {
+        "title": "Đề Xuất Cá Nhân Hóa",
+        "description": "Nhận đề xuất món ăn được hỗ trợ bởi AI dựa trên sở thích, lựa chọn trước đây và nguyên liệu theo mùa."
+      }
+    }
+  }
+}

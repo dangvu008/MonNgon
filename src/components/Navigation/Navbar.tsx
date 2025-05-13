@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { Menu, X, ChefHat, Search, User } from 'lucide-react';
 import Button from '../UI/Button';
+import LanguageSelector from '../Language/LanguageSelector';
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const { t } = useTranslation();
 
   const isActive = (path: string) => location.pathname === path;
 
@@ -28,7 +31,7 @@ const Navbar: React.FC = () => {
                     : 'text-gray-700 hover:text-green-600 hover:bg-gray-50'
                 }`}
               >
-                Recipes
+                {t('nav.recipes')}
               </Link>
               <Link
                 to="/meal-planner"
@@ -38,7 +41,7 @@ const Navbar: React.FC = () => {
                     : 'text-gray-700 hover:text-green-600 hover:bg-gray-50'
                 }`}
               >
-                Meal Plans
+                {t('nav.mealPlans')}
               </Link>
               <Link
                 to="/shopping-list"
@@ -48,7 +51,7 @@ const Navbar: React.FC = () => {
                     : 'text-gray-700 hover:text-green-600 hover:bg-gray-50'
                 }`}
               >
-                Shopping List
+                {t('nav.shoppingList')}
               </Link>
             </div>
           </div>
@@ -64,8 +67,9 @@ const Navbar: React.FC = () => {
             >
               <User className="h-5 w-5" />
             </Link>
+            <LanguageSelector />
             <div className="ml-2">
-              <Button variant="primary" size="sm">Sign In</Button>
+              <Button variant="primary" size="sm">{t('nav.signIn')}</Button>
             </div>
           </div>
 
@@ -100,7 +104,7 @@ const Navbar: React.FC = () => {
                     : 'text-gray-700 hover:text-green-600 hover:bg-gray-50'
                 }`}
               >
-                Recipes
+                {t('nav.recipes')}
               </Link>
               <Link
                 to="/meal-planner"
@@ -110,7 +114,7 @@ const Navbar: React.FC = () => {
                     : 'text-gray-700 hover:text-green-600 hover:bg-gray-50'
                 }`}
               >
-                Meal Plans
+                {t('nav.mealPlans')}
               </Link>
               <Link
                 to="/shopping-list"
@@ -120,7 +124,7 @@ const Navbar: React.FC = () => {
                     : 'text-gray-700 hover:text-green-600 hover:bg-gray-50'
                 }`}
               >
-                Shopping List
+                {t('nav.shoppingList')}
               </Link>
               <div className="flex space-x-2 px-3 py-2">
                 <button className="p-2 text-gray-500 hover:text-green-600 rounded-full hover:bg-gray-100">
@@ -132,9 +136,10 @@ const Navbar: React.FC = () => {
                 >
                   <User className="h-5 w-5" />
                 </Link>
+                <LanguageSelector />
               </div>
               <div className="px-3 pt-2">
-                <Button variant="primary" isFullWidth>Sign In</Button>
+                <Button variant="primary" isFullWidth>{t('nav.signIn')}</Button>
               </div>
             </div>
           </div>
