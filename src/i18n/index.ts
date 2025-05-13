@@ -10,6 +10,8 @@ i18n
   .init({
     fallbackLng: 'en',
     supportedLngs: ['en', 'vi'],
+    defaultNS: 'common',
+    ns: ['common'],
     debug: import.meta.env.DEV,
     
     interpolation: {
@@ -18,6 +20,11 @@ i18n
     
     backend: {
       loadPath: '/locales/{{lng}}/{{ns}}.json',
+    },
+
+    detection: {
+      order: ['localStorage', 'navigator'],
+      caches: ['localStorage'],
     },
   });
 

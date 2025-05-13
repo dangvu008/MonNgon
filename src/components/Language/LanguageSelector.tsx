@@ -12,15 +12,20 @@ const LanguageSelector: React.FC = () => {
 
   const handleLanguageChange = (languageCode: string) => {
     i18n.changeLanguage(languageCode);
+    // Save language preference
+    localStorage.setItem('i18nextLng', languageCode);
   };
 
   return (
     <div className="relative group">
-      <button className="p-2 text-gray-500 hover:text-green-600 rounded-full hover:bg-gray-100 transition-colors">
+      <button 
+        className="p-2 text-gray-500 hover:text-green-600 rounded-full hover:bg-gray-100 transition-colors"
+        aria-label="Select language"
+      >
         <Globe className="h-5 w-5" />
       </button>
       
-      <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 hidden group-hover:block">
+      <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 hidden group-hover:block z-50">
         {languages.map((language) => (
           <button
             key={language.code}
