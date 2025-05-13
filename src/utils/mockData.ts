@@ -160,7 +160,7 @@ export const recipes: Recipe[] = [
 ];
 
 // Sample meal plan for the current week
-export const mealPlan: MealPlan = {
+export const mealPlan = {
   id: '1',
   userId: 'user1',
   title: 'This Week\'s Plan',
@@ -200,4 +200,11 @@ export const mealPlan: MealPlan = {
       servings: 1
     }
   ]
+};
+
+// Export mockData object containing all mock data
+export const mockData = {
+  tags,
+  recipes,
+  mealPlan
 };
