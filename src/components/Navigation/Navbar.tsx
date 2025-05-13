@@ -10,8 +10,8 @@ const Navbar: React.FC = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className="bg-white shadow-md sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <header className="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           {/* Logo and main nav */}
           <div className="flex">
@@ -87,60 +87,60 @@ const Navbar: React.FC = () => {
             </button>
           </div>
         </div>
-      </div>
 
-      {/* Mobile menu */}
-      {isMenuOpen && (
-        <div className="sm:hidden" id="mobile-menu">
-          <div className="px-2 pt-2 pb-3 space-y-1">
-            <Link
-              to="/recipes"
-              className={`block px-3 py-2 rounded-md text-base font-medium ${
-                isActive('/recipes')
-                  ? 'text-green-600 bg-green-50'
-                  : 'text-gray-700 hover:text-green-600 hover:bg-gray-50'
-              }`}
-            >
-              Recipes
-            </Link>
-            <Link
-              to="/meal-planner"
-              className={`block px-3 py-2 rounded-md text-base font-medium ${
-                isActive('/meal-planner')
-                  ? 'text-green-600 bg-green-50'
-                  : 'text-gray-700 hover:text-green-600 hover:bg-gray-50'
-              }`}
-            >
-              Meal Plans
-            </Link>
-            <Link
-              to="/shopping-list"
-              className={`block px-3 py-2 rounded-md text-base font-medium ${
-                isActive('/shopping-list')
-                  ? 'text-green-600 bg-green-50'
-                  : 'text-gray-700 hover:text-green-600 hover:bg-gray-50'
-              }`}
-            >
-              Shopping List
-            </Link>
-            <div className="flex space-x-2 px-3 py-2">
-              <button className="p-2 text-gray-500 hover:text-green-600 rounded-full hover:bg-gray-100">
-                <Search className="h-5 w-5" />
-              </button>
+        {/* Mobile menu */}
+        {isMenuOpen && (
+          <div className="sm:hidden" id="mobile-menu">
+            <div className="px-2 pt-2 pb-3 space-y-1">
               <Link
-                to="/profile"
-                className="p-2 text-gray-500 hover:text-green-600 rounded-full hover:bg-gray-100"
+                to="/recipes"
+                className={`block px-3 py-2 rounded-md text-base font-medium ${
+                  isActive('/recipes')
+                    ? 'text-green-600 bg-green-50'
+                    : 'text-gray-700 hover:text-green-600 hover:bg-gray-50'
+                }`}
               >
-                <User className="h-5 w-5" />
+                Recipes
               </Link>
-            </div>
-            <div className="px-3 pt-2">
-              <Button variant="primary" isFullWidth>Sign In</Button>
+              <Link
+                to="/meal-planner"
+                className={`block px-3 py-2 rounded-md text-base font-medium ${
+                  isActive('/meal-planner')
+                    ? 'text-green-600 bg-green-50'
+                    : 'text-gray-700 hover:text-green-600 hover:bg-gray-50'
+                }`}
+              >
+                Meal Plans
+              </Link>
+              <Link
+                to="/shopping-list"
+                className={`block px-3 py-2 rounded-md text-base font-medium ${
+                  isActive('/shopping-list')
+                    ? 'text-green-600 bg-green-50'
+                    : 'text-gray-700 hover:text-green-600 hover:bg-gray-50'
+                }`}
+              >
+                Shopping List
+              </Link>
+              <div className="flex space-x-2 px-3 py-2">
+                <button className="p-2 text-gray-500 hover:text-green-600 rounded-full hover:bg-gray-100">
+                  <Search className="h-5 w-5" />
+                </button>
+                <Link
+                  to="/profile"
+                  className="p-2 text-gray-500 hover:text-green-600 rounded-full hover:bg-gray-100"
+                >
+                  <User className="h-5 w-5" />
+                </Link>
+              </div>
+              <div className="px-3 pt-2">
+                <Button variant="primary" isFullWidth>Sign In</Button>
+              </div>
             </div>
           </div>
-        </div>
-      )}
-    </nav>
+        )}
+      </nav>
+    </header>
   );
 };
 
