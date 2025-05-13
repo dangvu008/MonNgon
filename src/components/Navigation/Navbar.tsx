@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChefHat, Calendar, ShoppingBag, Search, User, Heart } from 'lucide-react';
+import { Menu, X, ChefHat, Search, User } from 'lucide-react';
 import Button from '../UI/Button';
 
 const Navbar: React.FC = () => {
@@ -59,20 +59,11 @@ const Navbar: React.FC = () => {
               <Search className="h-5 w-5" />
             </button>
             <Link
-              to="/meal-planner"
+              to="/profile"
               className="p-2 text-gray-500 hover:text-green-600 rounded-full hover:bg-gray-100 transition-colors"
             >
-              <Calendar className="h-5 w-5" />
+              <User className="h-5 w-5" />
             </Link>
-            <Link
-              to="/shopping-list"
-              className="p-2 text-gray-500 hover:text-green-600 rounded-full hover:bg-gray-100 transition-colors"
-            >
-              <ShoppingBag className="h-5 w-5" />
-            </Link>
-            <button className="p-2 text-gray-500 hover:text-green-600 rounded-full hover:bg-gray-100 transition-colors">
-              <Heart className="h-5 w-5" />
-            </button>
             <div className="ml-2">
               <Button variant="primary" size="sm">Sign In</Button>
             </div>
@@ -136,15 +127,12 @@ const Navbar: React.FC = () => {
               <button className="p-2 text-gray-500 hover:text-green-600 rounded-full hover:bg-gray-100">
                 <Search className="h-5 w-5" />
               </button>
-              <button className="p-2 text-gray-500 hover:text-green-600 rounded-full hover:bg-gray-100">
-                <Calendar className="h-5 w-5" />
-              </button>
-              <button className="p-2 text-gray-500 hover:text-green-600 rounded-full hover:bg-gray-100">
-                <ShoppingBag className="h-5 w-5" />
-              </button>
-              <button className="p-2 text-gray-500 hover:text-green-600 rounded-full hover:bg-gray-100">
+              <Link
+                to="/profile"
+                className="p-2 text-gray-500 hover:text-green-600 rounded-full hover:bg-gray-100"
+              >
                 <User className="h-5 w-5" />
-              </button>
+              </Link>
             </div>
             <div className="px-3 pt-2">
               <Button variant="primary" isFullWidth>Sign In</Button>
