@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChefHat, Calendar, ShoppingBag, Search, User, Heart } from 'lucide-react';
 import Button from '../UI/Button';
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
+
+  const isActive = (path: string) => location.pathname === path;
 
   return (
     <nav className="bg-white shadow-md sticky top-0 z-50">
@@ -11,34 +15,61 @@ const Navbar: React.FC = () => {
         <div className="flex justify-between h-16">
           {/* Logo and main nav */}
           <div className="flex">
-            <div className="flex-shrink-0 flex items-center">
+            <Link to="/" className="flex-shrink-0 flex items-center">
               <ChefHat className="h-8 w-8 text-green-600" />
               <span className="ml-2 text-xl font-bold text-gray-900">AngiDay</span>
-            </div>
+            </Link>
             <div className="hidden sm:ml-6 sm:flex sm:items-center sm:space-x-4">
-              <a href="#recipes" className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-green-600 hover:bg-gray-50 rounded-md transition-colors">
+              <Link
+                to="/recipes"
+                className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${
+                  isActive('/recipes')
+                    ? 'text-green-600 bg-green-50'
+                    : 'text-gray-700 hover:text-green-600 hover:bg-gray-50'
+                }`}
+              >
                 Recipes
-              </a>
-              <a href="#mealplans" className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-green-600 hover:bg-gray-50 rounded-md transition-colors">
+              </Link>
+              <Link
+                to="/meal-planner"
+                className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${
+                  isActive('/meal-planner')
+                    ? 'text-green-600 bg-green-50'
+                    : 'text-gray-700 hover:text-green-600 hover:bg-gray-50'
+                }`}
+              >
                 Meal Plans
-              </a>
-              <a href="#community" className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-green-600 hover:bg-gray-50 rounded-md transition-colors">
-                Community
-              </a>
+              </Link>
+              <Link
+                to="/shopping-list"
+                className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${
+                  isActive('/shopping-list')
+                    ? 'text-green-600 bg-green-50'
+                    : 'text-gray-700 hover:text-green-600 hover:bg-gray-50'
+                }`}
+              >
+                Shopping List
+              </Link>
             </div>
           </div>
 
-          {/* Right navigation - search, shopping list, etc. */}
+          {/* Right navigation */}
           <div className="hidden sm:flex sm:items-center sm:space-x-2">
             <button className="p-2 text-gray-500 hover:text-green-600 rounded-full hover:bg-gray-100 transition-colors">
               <Search className="h-5 w-5" />
             </button>
-            <button className="p-2 text-gray-500 hover:text-green-600 rounded-full hover:bg-gray-100 transition-colors">
+            <Link
+              to="/meal-planner"
+              className="p-2 text-gray-500 hover:text-green-600 rounded-full hover:bg-gray-100 transition-colors"
+            >
               <Calendar className="h-5 w-5" />
-            </button>
-            <button className="p-2 text-gray-500 hover:text-green-600 rounded-full hover:bg-gray-100 transition-colors">
+            </Link>
+            <Link
+              to="/shopping-list"
+              className="p-2 text-gray-500 hover:text-green-600 rounded-full hover:bg-gray-100 transition-colors"
+            >
               <ShoppingBag className="h-5 w-5" />
-            </button>
+            </Link>
             <button className="p-2 text-gray-500 hover:text-green-600 rounded-full hover:bg-gray-100 transition-colors">
               <Heart className="h-5 w-5" />
             </button>
@@ -67,19 +98,40 @@ const Navbar: React.FC = () => {
         </div>
       </div>
 
-      {/* Mobile menu, show/hide based on menu state */}
+      {/* Mobile menu */}
       {isMenuOpen && (
         <div className="sm:hidden" id="mobile-menu">
           <div className="px-2 pt-2 pb-3 space-y-1">
-            <a href="#recipes" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-green-600 hover:bg-gray-50">
+            <Link
+              to="/recipes"
+              className={`block px-3 py-2 rounded-md text-base font-medium ${
+                isActive('/recipes')
+                  ? 'text-green-600 bg-green-50'
+                  : 'text-gray-700 hover:text-green-600 hover:bg-gray-50'
+              }`}
+            >
               Recipes
-            </a>
-            <a href="#mealplans" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-green-600 hover:bg-gray-50">
+            </Link>
+            <Link
+              to="/meal-planner"
+              className={`block px-3 py-2 rounded-md text-base font-medium ${
+                isActive('/meal-planner')
+                  ? 'text-green-600 bg-green-50'
+                  : 'text-gray-700 hover:text-green-600 hover:bg-gray-50'
+              }`}
+            >
               Meal Plans
-            </a>
-            <a href="#community" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-green-600 hover:bg-gray-50">
-              Community
-            </a>
+            </Link>
+            <Link
+              to="/shopping-list"
+              className={`block px-3 py-2 rounded-md text-base font-medium ${
+                isActive('/shopping-list')
+                  ? 'text-green-600 bg-green-50'
+                  : 'text-gray-700 hover:text-green-600 hover:bg-gray-50'
+              }`}
+            >
+              Shopping List
+            </Link>
             <div className="flex space-x-2 px-3 py-2">
               <button className="p-2 text-gray-500 hover:text-green-600 rounded-full hover:bg-gray-100">
                 <Search className="h-5 w-5" />
